@@ -232,6 +232,30 @@ footer{background:#040b07;padding:1.65rem 5vw;display:flex;align-items:center;ju
   .hn-first,.hn-last{font-size:clamp(3.2rem,11vw,5rem)}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* CASE STUDY */
+#case-study{background:var(--bg)}
+.cs-card{border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;background:var(--card)}
+.cs-header{padding:1.75rem 2rem 1.35rem;border-bottom:1px solid var(--border)}
+.cs-name{font-family:'Syne',sans-serif;font-size:clamp(1.1rem,2vw,1.5rem);font-weight:800;color:var(--text);letter-spacing:-.03em;margin-bottom:.55rem}
+.cs-meta-row{display:flex;gap:.35rem;flex-wrap:wrap}
+.cs-tag{font-size:.62rem;font-weight:500;color:rgba(34,197,94,.5);border:1px solid rgba(34,197,94,.14);padding:.18rem .55rem;border-radius:100px}
+.cs-compare{position:relative;overflow:hidden;height:480px;cursor:ew-resize;user-select:none;-webkit-user-select:none;background:#070e0b}
+.cs-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;pointer-events:none;display:block}
+.cs-after-img{-webkit-clip-path:inset(0 50% 0 0);clip-path:inset(0 50% 0 0)}
+.cs-handle{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:2px;background:rgba(255,255,255,.7);pointer-events:none}
+.cs-handle-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 16px rgba(0,0,0,.45)}
+.cs-handle-ico{font-size:.75rem;color:#070e0b;font-weight:700}
+.cs-badge{position:absolute;top:1rem;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .65rem;border-radius:100px}
+.cs-badge-before{left:1rem;background:rgba(0,0,0,.65);color:rgba(255,255,255,.6)}
+.cs-badge-after{right:1rem;background:rgba(34,197,94,.12);color:var(--green);border:1px solid var(--borderg)}
+.cs-changes{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-top:1px solid var(--border)}
+.cs-change{padding:1.35rem 1.5rem;background:var(--card);transition:background .2s}
+.cs-change:hover{background:var(--card2)}
+.cs-change-label{font-size:.59rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(34,197,94,.4);margin-bottom:.35rem}
+.cs-change-title{font-family:'Syne',sans-serif;font-size:.86rem;font-weight:700;color:var(--text);margin-bottom:.28rem}
+.cs-change-desc{font-size:.73rem;color:var(--muted);line-height:1.6}
+@media(max-width:768px){.cs-compare{height:260px}.cs-changes{grid-template-columns:1fr}.cs-header{padding:1.25rem 1.25rem 1rem}}
 </style>
 </head>
 <body>
@@ -247,7 +271,7 @@ footer{background:#040b07;padding:1.65rem 5vw;display:flex;align-items:center;ju
 <nav id="main-nav">
   <a href="#hero" class="nav-logo">PAUL<em>folio</em></a>
   <ul class="nav-links" id="nav-links">
-    <li><a href="#work">Work</a></li>
+    <li><a href="#work">Work</a></li><li><a href="#case-study">Case Study</a></li>
     <li><a href="#graphics">Graphics</a></li>
     <li><a href="#jerseys">Apparel</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -292,6 +316,32 @@ footer{background:#040b07;padding:1.65rem 5vw;display:flex;align-items:center;ju
     <p class="s-desc">Real WordPress + Elementor builds. Click any screenshot to view full size.</p>
   </div>
   <div class="wb-grid" id="wb-grid"></div>
+</section>
+<section id="case-study">
+  <div class="s-head-row reveal">
+    <div><span class="s-label">Featured Case Study</span><h2 class="s-title">Shopify Store Redesign</h2></div>
+    <p class="s-desc">A full visual overhaul of a clothing brand&rsquo;s Shopify storefront &mdash; drag the slider to compare.</p>
+  </div>
+  <div class="cs-card reveal">
+    <div class="cs-header">
+      <p class="cs-name">Clothing Brand &mdash; Shopify Redesign</p>
+      <div class="cs-meta-row">
+        <span class="cs-tag">Shopify</span><span class="cs-tag">E-Commerce</span><span class="cs-tag">UI Redesign</span><span class="cs-tag">Brand Refresh</span><span class="cs-tag">Responsive</span>
+      </div>
+    </div>
+    <div class="cs-compare" id="cs-compare">
+      <img class="cs-img cs-before-img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjY4MCIgdmlld0JveD0iMCAwIDEyMDAgNjgwIj48cmVjdCB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiMxMjE4MWIiLz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI1OCIgZmlsbD0iIzBkMTMxNyIvPjxyZWN0IHg9IjI0IiB5PSIxNiIgd2lkdGg9Ijg4IiBoZWlnaHQ9IjIyIiByeD0iNCIgZmlsbD0iIzFlMmMzMyIvPjxyZWN0IHg9IjM4MCIgeT0iMTgiIHdpZHRoPSI0NDAiIGhlaWdodD0iMTgiIHJ4PSIzIiBmaWxsPSIjMTYyMDI4Ii8+PHJlY3QgeD0iMTA5MCIgeT0iMTMiIHdpZHRoPSI5MCIgaGVpZ2h0PSIzMiIgcng9IjQiIGZpbGw9IiMxZTJjMzMiLz48cmVjdCB4PSIwIiB5PSI1OCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iMjkwIiBmaWxsPSIjMGUxYTIwIi8+PHJlY3QgeD0iODAiIHk9IjEyMCIgd2lkdGg9IjMyMCIgaGVpZ2h0PSIyOCIgcng9IjQiIGZpbGw9IiMxYTJjMzgiLz48cmVjdCB4PSI4MCIgeT0iMTYyIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjIwIiByeD0iNCIgZmlsbD0iIzE0MjAyOCIvPjxyZWN0IHg9IjgwIiB5PSIxOTQiIHdpZHRoPSI0MDAiIGhlaWdodD0iMjAiIHJ4PSI0IiBmaWxsPSIjMTQyMDI4Ii8+PHJlY3QgeD0iODAiIHk9IjI0MCIgd2lkdGg9IjEzMCIgaGVpZ2h0PSI0MiIgcng9IjQiIGZpbGw9IiMxYTJjMzgiLz48cmVjdCB4PSI4MCIgeT0iMzkwIiB3aWR0aD0iMzIwIiBoZWlnaHQ9IjE4MCIgcng9IjQiIGZpbGw9IiMwZDFhMjAiLz48cmVjdCB4PSI0NDAiIHk9IjM5MCIgd2lkdGg9IjMyMCIgaGVpZ2h0PSIxODAiIHJ4PSI0IiBmaWxsPSIjMGQxYTIwIi8+PHJlY3QgeD0iODAwIiB5PSIzOTAiIHdpZHRoPSIzMjAiIGhlaWdodD0iMTgwIiByeD0iNCIgZmlsbD0iIzBkMWEyMCIvPjx0ZXh0IHg9IjYwMCIgeT0iNjA1IiBmb250LWZhbWlseT0ic3lzdGVtLXVpLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTIiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QkVGT1JFPC90ZXh0Pjx0ZXh0IHg9IjYwMCIgeT0iNjUwIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xOCkiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlJlcGxhY2Ugd2l0aCB5b3VyIGJlZm9yZSBzY3JlZW5zaG90PC90ZXh0Pjwvc3ZnPg==" alt="Before redesign">
+      <img class="cs-img cs-after-img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjY4MCIgdmlld0JveD0iMCAwIDEyMDAgNjgwIj48cmVjdCB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2ODAiIGZpbGw9IiMwNzBlMGIiLz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2MiIgZmlsbD0iIzBiMTUxMCIvPjxyZWN0IHg9IjI0IiB5PSIxOCIgd2lkdGg9Ijg4IiBoZWlnaHQ9IjI0IiByeD0iMTIiIGZpbGw9IiMxNjJiMWUiLz48cmVjdCB4PSIzOTAiIHk9IjIwIiB3aWR0aD0iNDIwIiBoZWlnaHQ9IjIwIiByeD0iMTAiIGZpbGw9IiMwZTFkMTQiLz48cmVjdCB4PSIxMDgyIiB5PSIxNSIgd2lkdGg9Ijk4IiBoZWlnaHQ9IjM0IiByeD0iMTciIGZpbGw9IiMyMmM1NWUiIG9wYWNpdHk9IjAuNzUiLz48cmVjdCB4PSIwIiB5PSI2MiIgd2lkdGg9IjEyMDAiIGhlaWdodD0iMzEwIiBmaWxsPSIjMDcwZTBiIi8+PGVsbGlwc2UgY3g9IjEwNDAiIGN5PSIyMDAiIHJ4PSIzMDAiIHJ5PSIyNjAiIGZpbGw9InJnYmEoMzQsMTk3LDk0LDAuMDUpIi8+PHJlY3QgeD0iODAiIHk9IjEwOCIgd2lkdGg9IjIxMCIgaGVpZ2h0PSIyNCIgcng9IjEyIiBmaWxsPSJyZ2JhKDM0LDE5Nyw5NCwwLjE0KSIvPjxyZWN0IHg9IjgwIiB5PSIxNDYiIHdpZHRoPSI0NjAiIGhlaWdodD0iMzgiIHJ4PSI2IiBmaWxsPSJyZ2JhKDIzNywyNDQsMjM5LDAuMDkpIi8+PHJlY3QgeD0iODAiIHk9IjE5OCIgd2lkdGg9IjM4MCIgaGVpZ2h0PSIzOCIgcng9IjYiIGZpbGw9InJnYmEoMjM3LDI0NCwyMzksMC4wNSkiLz48cmVjdCB4PSI4MCIgeT0iMjU2IiB3aWR0aD0iMTQ0IiBoZWlnaHQ9IjQ2IiByeD0iMjMiIGZpbGw9IiMyMmM1NWUiIG9wYWNpdHk9IjAuNjgiLz48cmVjdCB4PSIyNDAiIHk9IjI2NCIgd2lkdGg9IjEyNCIgaGVpZ2h0PSIzMCIgcng9IjE1IiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIi8+PHJlY3QgeD0iODAiIHk9IjQxNiIgd2lkdGg9IjMyMiIgaGVpZ2h0PSIxODgiIHJ4PSIxMCIgZmlsbD0iIzBlMTkxMiIvPjxyZWN0IHg9IjQ0MCIgeT0iNDE2IiB3aWR0aD0iMzIyIiBoZWlnaHQ9IjE4OCIgcng9IjEwIiBmaWxsPSIjMGUxOTEyIi8+PHJlY3QgeD0iODAwIiB5PSI0MTYiIHdpZHRoPSIzMjIiIGhlaWdodD0iMTg4IiByeD0iMTAiIGZpbGw9IiMwZTE5MTIiLz48cmVjdCB4PSI5MCIgeT0iNTUwIiB3aWR0aD0iMTkwIiBoZWlnaHQ9IjE0IiByeD0iNCIgZmlsbD0icmdiYSgyMzcsMjQ0LDIzOSwwLjA3KSIvPjxyZWN0IHg9IjkwIiB5PSI1NzQiIHdpZHRoPSI4NCIgaGVpZ2h0PSIyNiIgcng9IjEzIiBmaWxsPSJyZ2JhKDM0LDE5Nyw5NCwwLjE0KSIvPjx0ZXh0IHg9IjYwMCIgeT0iNjEwIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTIiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9InJnYmEoMzQsMTk3LDk0LDAuMSkiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFGVEVSPC90ZXh0Pjx0ZXh0IHg9IjYwMCIgeT0iNjU1IiBmb250LWZhbWlseT0ic3lzdGVtLXVpLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9InJnYmEoMzQsMTk3LDk0LDAuMjIpIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5SZXBsYWNlIHdpdGggeW91ciBhZnRlciBzY3JlZW5zaG90PC90ZXh0Pjwvc3ZnPg==" alt="After redesign">
+      <div class="cs-handle" id="cs-handle"><div class="cs-handle-btn"><span class="cs-handle-ico">&#9668;&#9658;</span></div></div>
+      <span class="cs-badge cs-badge-before">Before</span>
+      <span class="cs-badge cs-badge-after">After</span>
+    </div>
+    <div class="cs-changes">
+      <div class="cs-change"><p class="cs-change-label">Visual</p><p class="cs-change-title">Brand Identity Refresh</p><p class="cs-change-desc">Updated color palette, typography, and imagery to align with the brand's target market and premium positioning.</p></div>
+      <div class="cs-change"><p class="cs-change-label">Layout</p><p class="cs-change-title">Improved Product Discovery</p><p class="cs-change-desc">Restructured collection pages and product grid for faster browsing, cleaner hierarchy, and higher conversion focus.</p></div>
+      <div class="cs-change"><p class="cs-change-label">Experience</p><p class="cs-change-title">Mobile-First Redesign</p><p class="cs-change-desc">Rebuilt for mobile-first usage with optimized touch interactions, faster load times, and accessible navigation.</p></div>
+    </div>
+  </div>
 </section>
 <section id="graphics">
   <div class="s-head-row reveal">
@@ -353,7 +403,7 @@ footer{background:#040b07;padding:1.65rem 5vw;display:flex;align-items:center;ju
   <a href="#hero" class="footer-logo">PAUL<em>folio</em></a>
   <span class="footer-copy">&copy; 2025 John Paul Arellano. All rights reserved.</span>
   <ul class="footer-links">
-    <li><a href="#work">Work</a></li><li><a href="#graphics">Graphics</a></li><li><a href="#jerseys">Apparel</a></li><li><a href="https://behance.net/paularellano08" target="_blank" rel="noopener">Behance</a></li>
+    <li><a href="#work">Work</a></li><li><a href="#case-study">Case Study</a></li><li><a href="#graphics">Graphics</a></li><li><a href="#jerseys">Apparel</a></li><li><a href="https://behance.net/paularellano08" target="_blank" rel="noopener">Behance</a></li>
   </ul>
 </footer>
 
@@ -372,7 +422,30 @@ var dot=document.getElementById('cur-dot'),ring=document.getElementById('cur-rin
 if(dot&&ring){
   var mx=0,my=0,rx=0,ry=0;
   document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
-  (function raf(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(raf)})();
+  (function raf(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(raf)
+/* -- COMPARE SLIDER -- */
+(function(){
+  var el=document.getElementById('cs-compare');
+  if(!el)return;
+  var afterImg=el.querySelector('.cs-after-img');
+  var handle=document.getElementById('cs-handle');
+  var dragging=false;
+  function setPos(clientX){
+    var rect=el.getBoundingClientRect();
+    var pct=Math.max(4,Math.min(96,(clientX-rect.left)/rect.width*100));
+    var inv=(100-pct).toFixed(2);
+    afterImg.style.webkitClipPath='inset(0 '+inv+'% 0 0)';
+    afterImg.style.clipPath='inset(0 '+inv+'% 0 0)';
+    handle.style.left=pct+'%';
+  }
+  el.addEventListener('mousedown',function(e){dragging=true;setPos(e.clientX);e.preventDefault()});
+  window.addEventListener('mousemove',function(e){if(dragging)setPos(e.clientX)});
+  window.addEventListener('mouseup',function(){dragging=false});
+  el.addEventListener('touchstart',function(e){dragging=true;setPos(e.touches[0].clientX)},{passive:true});
+  window.addEventListener('touchmove',function(e){if(dragging)setPos(e.touches[0].clientX)},{passive:true});
+  window.addEventListener('touchend',function(){dragging=false});
+})();
+})();
   document.querySelectorAll('a,button,.wb-card,.gfx-card,.j-slide,.wb-img-wrap').forEach(function(el){
     el.addEventListener('mouseenter',function(){document.body.classList.add('c-hover')});
     el.addEventListener('mouseleave',function(){document.body.classList.remove('c-hover')});
@@ -604,6 +677,29 @@ if(jDots)jDots.addEventListener('click',function(e){
 renderJerseys();
 jAutoplay();
 
+
+/* -- COMPARE SLIDER -- */
+(function(){
+  var el=document.getElementById('cs-compare');
+  if(!el)return;
+  var afterImg=el.querySelector('.cs-after-img');
+  var handle=document.getElementById('cs-handle');
+  var dragging=false;
+  function setPos(clientX){
+    var rect=el.getBoundingClientRect();
+    var pct=Math.max(4,Math.min(96,(clientX-rect.left)/rect.width*100));
+    var inv=(100-pct).toFixed(2);
+    afterImg.style.webkitClipPath='inset(0 '+inv+'% 0 0)';
+    afterImg.style.clipPath='inset(0 '+inv+'% 0 0)';
+    handle.style.left=pct+'%';
+  }
+  el.addEventListener('mousedown',function(e){dragging=true;setPos(e.clientX);e.preventDefault()});
+  window.addEventListener('mousemove',function(e){if(dragging)setPos(e.clientX)});
+  window.addEventListener('mouseup',function(){dragging=false});
+  el.addEventListener('touchstart',function(e){dragging=true;setPos(e.touches[0].clientX)},{passive:true});
+  window.addEventListener('touchmove',function(e){if(dragging)setPos(e.touches[0].clientX)},{passive:true});
+  window.addEventListener('touchend',function(){dragging=false});
+})();
 })();
 </script>
 </body>
