@@ -243,7 +243,7 @@ footer{background:#040b07;padding:1.65rem 5vw;display:flex;align-items:center;ju
 .cs-tag{font-size:.62rem;font-weight:500;color:rgba(34,197,94,.5);border:1px solid rgba(34,197,94,.14);padding:.18rem .55rem;border-radius:100px}
 .cs-compare{position:relative;overflow:hidden;height:480px;cursor:ew-resize;user-select:none;-webkit-user-select:none;background:#070e0b}
 .cs-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;pointer-events:none;display:block}
-.cs-after-img{-webkit-clip-path:inset(0 50% 0 0);clip-path:inset(0 50% 0 0)}
+.cs-before-img{-webkit-clip-path:inset(0 50% 0 0);clip-path:inset(0 50% 0 0)}
 .cs-handle{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:2px;background:rgba(255,255,255,.7);pointer-events:none}
 .cs-handle-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 16px rgba(0,0,0,.45)}
 .cs-handle-ico{font-size:.75rem;color:#070e0b;font-weight:700}
@@ -660,7 +660,7 @@ jAutoplay();
 (function(){
   var el=document.getElementById('cs-compare');
   if(!el)return;
-  var afterImg=el.querySelector('.cs-after-img');
+  var afterImg=el.querySelector('.cs-before-img');
   var handle=document.getElementById('cs-handle');
   var dragging=false;
   function setPos(clientX){
